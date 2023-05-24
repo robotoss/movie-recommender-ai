@@ -1,3 +1,9 @@
+use std::process;
+mod db_data_modification;
+
 fn main() {
-    println!("Hello, world!");
+    if let Err(err) = db_data_modification::example() {
+        println!("error running example: {}", err);
+        process::exit(1);
+    }
 }
